@@ -21,7 +21,7 @@ function App() {
       const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "say hi to me", //customise(jobDescription, workExperience),
+        prompt: customise(jobDescription, workExperience),
         temperature: 0.8,
         max_tokens: 100,
       });
