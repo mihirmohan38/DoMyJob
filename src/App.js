@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { customise } from "./prompts/resume";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [workExperience, setWorkExperience] = useState("");
@@ -64,6 +65,7 @@ function App() {
           )}
         </div>
       </main>
+      <Analytics />
     </div>
   );
 }
