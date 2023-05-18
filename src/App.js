@@ -22,7 +22,7 @@ function App() {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: customise(jobDescription, workExperience),
-        temperature: 0.8,
+        temperature: 0.5,
         max_tokens: 100,
       });
       setGeneratedText(response.data.choices[0].text);
