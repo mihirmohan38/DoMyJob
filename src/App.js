@@ -11,12 +11,11 @@ function App() {
 
   const handleButtonClick = async () => {
     // Simulating API request with dummy string output
-    console.log(process.env.OPENAI_API_KEY);
-    const configuration = new Configuration({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
     try {
+      const configuration = new Configuration({
+        apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+      });
+      const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: customise(jobDescription, workExperience),
@@ -26,7 +25,7 @@ function App() {
 
       setGeneratedText(response.data.choices[0].text);
     } catch (error) {
-      throw error;
+      alert(error.message);
     }
   };
 
